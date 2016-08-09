@@ -61,7 +61,7 @@ void init_parser() {
             ;
         
     Unary = (ADD | SUB, SPACE_OPT, Unary) >> [](auto t) {
-                return get<0>(t) == "+" ? get<2>(t) : - get<2>(t);
+              return get<0>(t) == "+" ? get<2>(t) : - get<2>(t);
           }
           | Primary
           ;
@@ -92,7 +92,7 @@ int main () {
     
     // parse
     auto parse_result = Expr(expr.cbegin(), expr.cend());
-    double ans = parse_result ? parse_result->first : NAN;;
+    double ans = parse_result ? parse_result->first : NAN;
 
     // print result
     cout << ans << endl;
