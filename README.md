@@ -28,7 +28,7 @@ void init_parser() {
             ;
         
     Unary = (ADD | SUB, SPACE_OPT, Unary) >> [](auto t) {
-                return get<0>(t) == "+" ? get<2>(t) : - get<2>(t);
+              return get<0>(t) == "+" ? get<2>(t) : - get<2>(t);
           }
           | Primary
           ;
